@@ -22,10 +22,9 @@ fn main() -> Result<(), Error> {
 
     for n in data.iter().cycle() {
         total += n;
-        if freqs.contains(&total) {
+        if !freqs.insert(total) {
             break;
         }
-        freqs.insert(total);
     }
 
     println!("Part 2: {}", total);
