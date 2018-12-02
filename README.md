@@ -7,9 +7,9 @@ efficient algorithms.
 
 # Benchmarks
 
-Times
-----------------------------------------
-target/release/p1: 19ms
-target/release/p2: 2ms
+	Times
+	----------------------------------------
+	target/release/p1: 19ms
+	target/release/p2: 2ms
 
-Total time: 21ms
+	Total time: 21ms
