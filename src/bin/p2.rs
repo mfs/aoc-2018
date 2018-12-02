@@ -24,8 +24,7 @@ fn main() -> Result<(), Error> {
         let mut dict = HashMap::new();
 
         for ch in id.chars() {
-            let count = dict.entry(ch).or_insert(0);
-            *count += 1;
+            *dict.entry(ch).or_insert(0) += 1;
         }
 
         let mut counts = HashSet::new();
