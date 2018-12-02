@@ -2,37 +2,34 @@ extern crate failure;
 extern crate time;
 
 use std::path::Path;
+use time::Duration;
 use failure::Error;
 
 fn main() -> Result<(), Error> {
-    let mut timestamps = vec![];
+    let mut times = vec![];
 
     let programs: Vec<_> = (1..21).map(|n| format!("target/release/p{}", n)).collect();
-
-    timestamps.push(time::precise_time_ns());
 
     for p in &programs {
         if !Path::new(p).exists() {
             break;
         }
         println!("{}", p);
+        let start = time::precise_time_ns();
         std::process::Command::new(p).status()?;
-        timestamps.push(time::precise_time_ns());
+        let end = time::precise_time_ns();
+        times.push(end - start);
         println!();
     }
 
     println!("Times");
     println!("----------------------------------------");
-    for (win, p) in timestamps.windows(2).zip(programs) {
-        let d = time::Duration::nanoseconds((win[1] - win[0]) as i64);
-
-        println!("{}: {}ms", p, d.num_milliseconds());
+    for (t, p) in times.iter().zip(programs) {
+        println!("{}: {}ms", p, Duration::nanoseconds(*t as i64).num_milliseconds());
     }
 
-    if let Some(last) = timestamps.last() {
-        let total = time::Duration::nanoseconds((last - timestamps[0]) as i64);
-        println!("\nTotal time: {}ms", total.num_milliseconds());
-    }
+    let total = times.iter().sum::<u64>();
+    println!("\nTotal time: {}ms", Duration::nanoseconds(total as i64).num_milliseconds());
 
     Ok(())
 }
