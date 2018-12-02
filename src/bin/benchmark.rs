@@ -8,7 +8,7 @@ use failure::Error;
 fn main() -> Result<(), Error> {
     let mut times = vec![];
 
-    let programs: Vec<_> = (1..21).map(|n| format!("target/release/p{}", n)).collect();
+    let programs: Vec<_> = (1..=20).map(|n| format!("target/release/p{}", n)).collect();
 
     for p in &programs {
         if !Path::new(p).exists() {
