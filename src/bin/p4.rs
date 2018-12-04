@@ -6,7 +6,7 @@ use std::io::BufReader;
 use std::io::BufRead;
 use std::collections::HashMap;
 use std::collections::HashSet;
-use failure::Error;
+use failure::{Error, format_err, err_msg};
 
 #[derive(Debug, PartialEq, Eq, PartialOrd, Ord)]
 struct Entry {
@@ -32,7 +32,11 @@ fn parse() -> Result<Vec<Graph>, Error> {
 
     for line in file.lines() {
         let line = line?;
-        let c = re.captures(&line).unwrap();
+        let c = re.captures(&line).ok_or(format_err!("error parsing: {}", line))?;
+
+        if c.len() != 7 {
+            return Err(format_err!("error parsing: {}", line));
+        }
 
         let e = Entry {
             year: c[1].parse()?,
@@ -55,16 +59,15 @@ fn parse() -> Result<Vec<Graph>, Error> {
     let mut sleep_start = 0;
 
     for x in &entries {
-
         if x.action == "falls asleep" {
             sleep_start = x.minute;
         } else if x.action == "wakes up" {
             for x in sleep_start..x.minute {
-                let g = graphs.last_mut().unwrap();
+                let g = graphs.last_mut().ok_or(err_msg("error: missing graph"))?;
                 g.minutes.insert(x);
             }
         } else {
-            let c = re.captures(&x.action).unwrap();
+            let c = re.captures(&x.action).ok_or(format_err!("error parsing: {}", &x.action))?;
             let current_guard = c[1].parse()?;
             graphs.push(
                 Graph {
