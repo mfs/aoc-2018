@@ -26,7 +26,7 @@ struct Graph {
 fn parse() -> Result<Vec<Graph>, Error> {
     let file = BufReader::new(File::open("data/p4.txt")?);
 
-    let re  = regex::Regex::new(r"\[(\d{4})\-(\d{2})\-(\d{2}) (\d{2}):(\d{2})\] (.+)").unwrap();
+    let re  = regex::Regex::new(r"\[(\d{4})\-(\d{2})\-(\d{2}) (\d{2}):(\d{2})\] (.+)")?;
 
     let mut entries = vec![];
 
@@ -48,7 +48,7 @@ fn parse() -> Result<Vec<Graph>, Error> {
 
     entries.sort();
 
-    let re = regex::Regex::new(r"#(\d+) ").unwrap();
+    let re = regex::Regex::new(r"#(\d+) ")?;
 
     let mut graphs: Vec<Graph> = vec![];
 
