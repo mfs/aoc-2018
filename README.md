@@ -19,9 +19,10 @@ timing information.
 
 	Times
 	----------------------------------------
-	target/release/p1: 20ms
+	target/release/p1: 27ms
 	target/release/p2: 2ms
-	target/release/p3: 97ms
-	target/release/p4: 6ms
+	target/release/p3: 94ms
+	target/release/p4: 8ms
+	target/release/p5: 704ms
 
-	Total time: 127ms
+	Total time: 838ms
