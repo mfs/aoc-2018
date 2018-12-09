@@ -5,7 +5,7 @@ use failure::{Error, err_msg};
 
 fn process(num_marbles: usize, num_players: usize) -> Result<usize, Error> {
 
-    let mut current_player = 0;
+    let mut current_player = 1;
     let mut players = vec![0; num_players];
     let mut circle = VecDeque::new();
     circle.push_back(0);
