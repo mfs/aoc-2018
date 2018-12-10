@@ -4,7 +4,7 @@ extern crate regex;
 use std::fs::File;
 use std::io::BufReader;
 use std::io::BufRead;
-use failure::{Error, err_msg};
+use failure::{Error, format_err};
 
 #[derive(Debug)]
 struct Point {
@@ -35,7 +35,7 @@ fn main() -> Result<(), Error> {
     for line in file.lines() {
         let line = line?;
 
-        let c = re.captures(&line).ok_or(err_msg(""))?;
+        let c = re.captures(&line).ok_or(format_err!("error parsing {}", line))?;
 
         let p = Point::new(c[1].parse()?, c[2].parse()?, c[3].parse()?, c[4].parse()?);
 
