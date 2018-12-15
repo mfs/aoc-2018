@@ -56,7 +56,6 @@ struct Cart {
     x: usize,
     direction: Direction,
     next_turn: Turn,
-    id: u64,
     is_alive: bool,
 }
 
@@ -72,29 +71,20 @@ fn main() -> Result<(), Error> {
     }
 
     let mut carts = vec![];
-    let mut id = 0;
 
     for y in 0..150 {
         for x in 0..150 {
             let c = grid[y][x];
             let square = match c {
-                '^' => Some(Cart {x: x, y: y, direction: Direction::Up, next_turn: Turn::Left, id: id, is_alive: true }),
-                'v' => Some(Cart {x: x, y: y, direction: Direction::Down, next_turn: Turn::Left, id: id, is_alive: true }),
-                '<' => Some(Cart {x: x, y: y, direction: Direction::Left, next_turn: Turn::Left, id: id, is_alive: true }),
-                '>' => Some(Cart {x: x, y: y, direction: Direction::Right, next_turn: Turn::Left, id: id, is_alive: true }),
+                '^' => Some(Cart {x: x, y: y, direction: Direction::Up, next_turn: Turn::Left, is_alive: true }),
+                'v' => Some(Cart {x: x, y: y, direction: Direction::Down, next_turn: Turn::Left, is_alive: true }),
+                '<' => Some(Cart {x: x, y: y, direction: Direction::Left, next_turn: Turn::Left, is_alive: true }),
+                '>' => Some(Cart {x: x, y: y, direction: Direction::Right, next_turn: Turn::Left, is_alive: true }),
                 _   => None,
             };
 
             if let Some(cart) = square {
-                let p = match cart.direction {
-                    Direction::Up => '|',
-                    Direction::Down => '|',
-                    Direction::Left => '-',
-                    Direction::Right => '-',
-                };
-                grid[y][x] = p;
                 carts.push(cart);
-                id += 1;
             }
 
         }
@@ -125,7 +115,6 @@ fn main() -> Result<(), Error> {
                     carts[j].is_alive = false;
                 }
             }
-
 
             // adjust direction corners, intersections
             let c = grid[carts[i].y][carts[i].x];
