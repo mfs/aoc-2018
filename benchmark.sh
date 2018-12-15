@@ -4,4 +4,4 @@ set -e
 
 cargo build --release
 
-target/release/benchmark
+target/release/benchmark | tee benchmark.log

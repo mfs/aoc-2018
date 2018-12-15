@@ -1,0 +1,84 @@
+target/release/p1
+Part 1: 425
+Part 2: 57538
+
+target/release/p2
+Part 1: 6370
+Part 2: rmyxgdlihczskunpfijqcebtv
+
+target/release/p3
+Part 1: 115348
+Part 2: 188
+
+target/release/p4
+Part 1: 4716
+Part 2: 117061
+
+target/release/p5
+Part 1: 9370
+Part 2: 6390
+
+target/release/p6
+Part 1: 4290
+Part 2: 37318
+
+target/release/p7
+Part 1: GJFMDHNBCIVTUWEQYALSPXZORK
+Part 2: 1050
+
+target/release/p8
+Part 1: 38722
+Part 2: 13935
+
+target/release/p9
+Part 1: 429287
+Part 2: 3624387659
+
+target/release/p10
+Part 1:
+######    ##    ######  ######  #####   #       ######   #### 
+     #   #  #   #            #  #    #  #            #  #    #
+     #  #    #  #            #  #    #  #            #  #     
+    #   #    #  #           #   #    #  #           #   #     
+   #    #    #  #####      #    #####   #          #    #     
+  #     ######  #         #     #  #    #         #     #  ###
+ #      #    #  #        #      #   #   #        #      #    #
+#       #    #  #       #       #   #   #       #       #    #
+#       #    #  #       #       #    #  #       #       #   ##
+######  #    #  ######  ######  #    #  ######  ######   ### #
+Part 2: 10105
+
+target/release/p11
+Part 1: 20,50
+Part 2: 238,278,9
+
+target/release/p12
+Part 1: 4200
+Part 2: 9699999999321
+
+target/release/p13
+Part 1: 115 138
+Part 2: 0 98
+
+target/release/p14
+Part 1: 7861362411
+Part 2: 20203532
+
+Times
+----------------------------------------
+target/release/p1: 18ms
+target/release/p2: 2ms
+target/release/p3: 87ms
+target/release/p4: 7ms
+target/release/p5: 737ms
+target/release/p6: 141ms
+target/release/p7: 1ms
+target/release/p8: 1ms
+target/release/p9: 531ms
+target/release/p10: 8ms
+target/release/p11: 994ms
+target/release/p12: 3ms
+target/release/p13: 12ms
+target/release/p14: 556ms
+
+Total time: 3106ms
