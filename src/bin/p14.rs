@@ -69,8 +69,8 @@ fn score(part: u64) {
 
 fn main() -> Result<(), Error> {
 
-    score(1);
-    score(2);
+    score(PART_1);
+    score(PART_2);
 
     Ok(())
 }
