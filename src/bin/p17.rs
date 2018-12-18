@@ -44,6 +44,7 @@ impl State {
             min_y,
         })
     }
+
     fn fill(&mut self, pt: Pt, dir: Pt) -> bool {
         macro_rules! clay {
             ($x:expr) => {
