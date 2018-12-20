@@ -19,19 +19,24 @@ timing information.
 
 	Times
 	----------------------------------------
-	target/release/p1: 23ms
-	target/release/p2: 6ms
-	target/release/p3: 91ms
-	target/release/p4: 17ms
-	target/release/p5: 720ms
-	target/release/p6: 146ms
-	target/release/p7: 5ms
-	target/release/p8: 6ms
-	target/release/p9: 527ms
-	target/release/p10: 21ms
-	target/release/p11: 973ms
+	target/release/p1: 21ms
+	target/release/p2: 2ms
+	target/release/p3: 97ms
+	target/release/p4: 6ms
+	target/release/p5: 645ms
+	target/release/p6: 137ms
+	target/release/p7: 1ms
+	target/release/p8: 1ms
+	target/release/p9: 519ms
+	target/release/p10: 8ms
+	target/release/p11: 970ms
 	target/release/p12: 3ms
-	target/release/p13: 11ms
-	target/release/p14: 554ms
+	target/release/p13: 12ms
+	target/release/p14: 534ms
+	target/release/p16: 5ms
+	target/release/p17: 21ms
+	target/release/p18: 173ms
+	target/release/p19: 163ms
+	target/release/p20: 6ms
 
-	Total time: 3109ms
+	Total time: 3334ms
