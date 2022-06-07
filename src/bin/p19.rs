@@ -4,7 +4,7 @@ extern crate regex;
 use std::fs::File;
 use std::io::BufReader;
 use std::io::BufRead;
-use failure::{Error, format_err};
+use failure::Error;
 
 macro_rules! reg_op {
     ($id:ident, $op:tt) => (
